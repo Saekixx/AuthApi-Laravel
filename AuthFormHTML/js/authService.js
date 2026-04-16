@@ -5,7 +5,7 @@ export const login = async (email, password) => {
 };
 
 export const register = async (name, email, password, confirmed_password) => {
-  const data = await postConfig("register", {
+  return await postConfig("register", {
     name,
     email,
     password,
@@ -17,8 +17,8 @@ export const logout = async () => {
   return await postConfig("logout");
 };
 
-export const loginWithGoogle = async () => {
-  const data = await getConfig("google-auth/redirect");
+export const loginWithGoogle = () => {
+  window.location.href = "http://localhost:8000/api/google-auth/redirect";
 };
 
 export const verifyToken = async (token) => {
