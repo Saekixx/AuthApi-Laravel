@@ -14,7 +14,7 @@ export const register = async (name, email, password, confirmed_password) => {
 };
 
 export const logout = async () => {
-  const data = await getConfig("logout");
+  return await postConfig("logout");
 };
 
 export const loginWithGoogle = async () => {

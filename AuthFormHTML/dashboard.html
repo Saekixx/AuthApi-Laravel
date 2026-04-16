@@ -3,11 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/dashboard.css" />
     <title>Home</title>
   </head>
   <body>
-    <h1>Dashboard por realizar</h1>
-    <p>Bienvenido, <span id="user-name"></span>!</p>
+    <div class="dashboard-container">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <img
+            src="https://ui-avatars.com/api/?name=User&background=random"
+            alt="Avatar"
+            id="user-avatar"
+            class="avatar"
+          />
+          <p id="user-name" class="user-label"></p>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a href="dashboard.html" class="nav-link active">
+            <i>🏠</i> Dashboard
+          </a>
+          <a href="profile.html" class="nav-link"> <i>👤</i> Mi Perfil </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button id="logout-btn" class="logout-btn">
+            <i>🚪</i> Cerrar Sesión
+          </button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header>
+          <h1>Dashboard Principal</h1>
+          <p>Bienvenido de nuevo</p>
+        </header>
+
+        <section class="content-body">
+          <div class="card">
+            <h3>Estado del Sistema</h3>
+            <p>Aquí irá tu información principal pronto.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="js/Auth/verifyToken.js"></script>
+    <script type="module" src="js/Auth/logout.js"></script>
   </body>
-  <script type="module" src="js/Auth/verifyToken.js"></script>
 </html>

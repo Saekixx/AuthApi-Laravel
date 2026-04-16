@@ -1,0 +1,84 @@
+:root {
+  --primary: #2c3e50;
+  --accent: #3498db;
+  --danger: #e74c3c;
+  --bg: #f4f7f6;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg);
+}
+
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.sidebar-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.avatar {
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-bottom: 10px;
+}
+.user-label {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.sidebar-nav {
+  flex-grow: 1;
+}
+.nav-link {
+  display: block;
+  color: #bdc3c7;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  transition: 0.3s;
+}
+.nav-link:hover,
+.nav-link.active {
+  background: #34495e;
+  color: white;
+}
+
+/* Botón Logout */
+.logout-btn {
+  background: var(--danger);
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Main Content */
+.main-content {
+  flex-grow: 1;
+  padding: 30px;
+}
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
