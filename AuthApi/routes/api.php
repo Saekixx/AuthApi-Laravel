@@ -35,12 +35,7 @@ Route::get('/google-auth/callback', function () {
     // Generamos el token
     $token = $user->createToken('auth_token')->plainTextToken;
 
-    return response()->json([
-        'message' => 'Login social exitoso',
-        'access_token' => $token,
-        'token_type' => 'Bearer',
-        'user' => $user
-    ]);
+    return redirect("http://localhost:50413/dashboard.html?token=" . $token . "&name=" . urlencode($user->name));
 });
 
 // Endpoints mandar correo para resetear contraseña
