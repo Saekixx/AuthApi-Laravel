@@ -1,8 +1,11 @@
 const urlParams = new URLSearchParams(window.location.search);
 const token = urlParams.get("token");
+const email = urlParams.get("email");
 const name = urlParams.get("name");
 
 if (token) localStorage.setItem("token", token);
+
+if (email) localStorage.setItem("email", email);
 
 if (name) {
   localStorage.setItem(

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restablecer Contraseña</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <section>
+      <div class="login-box" style="height: 500px">
+        <form id="reset-password-form">
+          <h2>Nueva Password</h2>
+
+          <div class="input-box">
+            <span class="icon">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+            </span>
+            <input type="password" name="password" id="password" required />
+            <label>Nueva Contraseña</label>
+          </div>
+
+          <div class="input-box">
+            <span class="icon">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+            </span>
+            <input
+              type="password"
+              name="confirmed_password"
+              id="confirmed_password"
+              required
+            />
+            <label>Confirmar Contraseña</label>
+          </div>
+
+          <button type="submit">Actualizar Contraseña</button>
+
+          <div class="divider">O</div>
+
+          <div class="register-link">
+            <p>
+              ¿Recordaste tu clave? <a href="login.html">Volver al Login</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script type="module" src="js/Auth/reestablecerPassword.js"></script>
+    <script src="js/Auth/capturarToken.js"></script>
+  </body>
+</html>

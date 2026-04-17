@@ -24,3 +24,21 @@ export const loginWithGoogle = () => {
 export const verifyToken = async (token) => {
   return await getConfig("verify-token", { token });
 };
+
+export const resetPasswordEmail = async (email) => {
+  return await postConfig("reset-password-link", { email: email });
+};
+
+export const resetPassword = async (
+  token,
+  email,
+  password,
+  confirmed_password,
+) => {
+  return await postConfig("reset-password", {
+    token,
+    email,
+    password,
+    confirmed_password,
+  });
+};
