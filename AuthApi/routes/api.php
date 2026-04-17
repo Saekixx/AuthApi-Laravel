@@ -35,18 +35,19 @@ Route::get('/google-auth/callback', function () {
     // Generamos el token
     $token = $user->createToken('auth_token')->plainTextToken;
 
-    return redirect("http://localhost:50413/dashboard.html?token=" . $token . "&name=" . urlencode($user->name));
+    return redirect("http://localhost:62994/dashboard.html?token=" . $token . "&name=" . urlencode($user->name));
 });
 
 // Endpoints mandar correo para resetear contraseña
 Route::post('reset-password-link', [AuthController::class, 'resetPasswordLink']);
 // Endpoint obtener el token y poder reestablecer la contraseña
 Route::get('reset-password/{token}', function ($token, Request $request) {
-    return response()->json([
-        'message' => 'Recibiste un token para cambiar tu contrasenia',
-        'token' => $token,
-        'email' => $request->email
-    ]);
+
+    $frontendUrl = "http://localhost:62994/reestablecer.html";
+
+    $urlFinal = $frontendUrl . "?token=" . $token . "&email=" . urlencode($request->email);
+
+    return redirect($urlFinal);
 })->name('password.reset');
 // Endpoint para reestablecer la contraseña con el token recibido
 Route::post('reset-password', [AuthController::class, 'resetPassword']);
